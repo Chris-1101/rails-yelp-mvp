@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <%= simple_form_for(restaurant) do |f| %>
+    <% if @restaurant.errors.any? %>
+    <div class="errors-container">
+      Please observe errors below:
+    </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.input :name %>
+    </div>
+    <div class="form-group">
+      <%= f.input :address %>
+    </div>
+    <div class="form-group">
+      <%= f.input :phone_number %>
+    </div>
+    <div class="form-group">
+      <%= f.input :category, collection: ["Belgian", "Chinese", "French", "Italian", "Japanese"], class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+    <div class="form-group">
+      <small>
+        <% unless @restaurant.new_record? %>
+        <%= link_to "Show", restaurant_path(@restaurant) %> |
+        <% end %>
+        <%= link_to "Back", restaurants_path %>
+      </small>
+    </div>
+    <% end %>
+  </div>
+</div>

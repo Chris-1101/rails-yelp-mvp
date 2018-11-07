@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row text-center">
+    <h1><%= @restaurant.name %></h1>
+    <small>
+      <%= "#{@restaurant.category.capitalize} Cuisine · #{@restaurant.phone_number}" %>
+    </small>
+    <p>
+    <% @restaurant.address.split(',').each do |line| %>
+      <%= line %><br />
+    <% end %>
+    </p>
+    <%= link_to "Back to List", restaurants_path, class: "btn btn-primary" %>
+    <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+
+    <div class="ratings">
+      <% @restaurant.reviews.reverse.each do |review| %>
+        <div class="rating">
+          <% review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end%>
+          <br />
+          <%= review.content %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

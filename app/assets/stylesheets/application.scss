@@ -1,0 +1,63 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "layouts/index";
+@import "components/index";
+@import "pages/index";
+
+body {
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  padding: 5px 0;
+}
+
+p {
+  padding: 20px;
+}
+
+.form-centre {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.errors-container {
+  margin: 10px 0;
+  padding: 5px 0;
+  color: #FF7777;
+}
+
+.invalid-feedback {
+  color: #FF7777;
+  font-size: 12px;
+}
+
+.ratings {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.rating {
+  margin: 10px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+
+  i {
+    font-size: 12px;
+  }
+}
